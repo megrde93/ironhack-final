@@ -6,7 +6,7 @@ import "../stylesheets/App.css";
 const SignIn = (props) => {
   const [usernameHook, setUsernameHook] = React.useState("");
   const [passwordHook, setPasswordHook] = React.useState("");
-  const [allPosts, setAllPosts] = useState([]);
+  const [newestPost, setNewestPost] = useState([]);
   const history = useHistory();
   const login = () => {
     post("/users/login", {
@@ -40,7 +40,7 @@ const SignIn = (props) => {
           return new Date(b.time) - new Date(a.time);
         });
         console.log(sortArr[0].imgOne);
-        setAllPosts(sortArr);
+        setNewestPost(sortArr[0]);
       })
       .catch(() => {
         console.log("Something went wrong");
@@ -48,37 +48,46 @@ const SignIn = (props) => {
   }, []);
 
   return (
-    <div className="signIn">
+    <div className="signIn" className="bG">
       <div style={{ textAlign: "center" }}>
         <h1> Sign Into Account Here</h1>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div>
-          {/* <img
-            className="postImages"
-            src={allPosts[0].imgOne}
-            alt="newest post"
-          /> */}
-          {/* <h2>{allPosts[0].location}</h2> */}
+      <div className="signInContainer">
+        <div className="signInContainerC">
+          <div>
+            <img
+              className="postImages"
+              src={newestPost.imgOne}
+              alt="newest post"
+            />
+          </div>
+          <div>
+            <h3 style={{ margin: "0" }}>
+              {newestPost.username} just posted about {newestPost.location}
+            </h3>
+          </div>
         </div>
 
-        <div>
-          <label>username</label>
-          <input
-            onChange={(e) => {
-              setUsernameHook(e.target.value);
-            }}
-          ></input>
-        </div>
+        <div className="signInContainerC">
+          <div>
+            <label>username</label>
+            <input
+              onChange={(e) => {
+                setUsernameHook(e.target.value);
+              }}
+            ></input>
+          </div>
 
-        <div>
-          <label>password</label>
-          <input
-            onChange={(e) => {
-              setPasswordHook(e.target.value);
-            }}
-          ></input>
+          <div>
+            <label>password</label>
+            <input
+              onChange={(e) => {
+                setPasswordHook(e.target.value);
+              }}
+            ></input>
+          </div>
+
           <div>
             <button onClick={login}>Log in</button>
           </div>

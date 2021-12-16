@@ -50,7 +50,7 @@ const UserPage = (props) => {
   }
   console.log(usersImg);
   return (
-    <div>
+    <div className="bG">
       <h1>{props.match.params.username} </h1>
       <img className="profilePhoto" src={usersImg} alt="user" />
       <div className="userPage">

@@ -26,29 +26,31 @@ const ProfilePage = (props) => {
     history.push("/SignIn");
   }
   return (
-    <div>
-      <h1> Welcome {loggedInUserName} !!</h1>
+    <div className="bG">
+      <div>
+        <h1 style={{ textAlign: "center" }}> Welcome {loggedInUserName} !!</h1>
 
-      <div className="profilePage">
-        {allSingleUserPosts.map((posts) => {
-          return (
-            <div>
+        <div className="profilePage">
+          {allSingleUserPosts.map((posts) => {
+            return (
               <div>
-                <Link to={`/post/${posts._id}`}>
-                  <img
-                    className="postImages"
-                    src={posts.imgOne}
-                    alt="img failed to load"
-                  />
-                </Link>
-              </div>
+                <div>
+                  <Link to={`/post/${posts._id}`}>
+                    <img
+                      className="postImages"
+                      src={posts.imgOne}
+                      alt="img failed to load"
+                    />
+                  </Link>
+                </div>
 
-              <div>
-                <Link to={`/post/${posts._id}`}>{posts.location}</Link>
+                <div>
+                  <Link to={`/post/${posts._id}`}>{posts.location}</Link>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
