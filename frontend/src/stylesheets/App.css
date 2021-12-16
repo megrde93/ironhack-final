@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "Baskerville";
+  src: local("Baskerville"),
+    url(./libre-baskerville/LibreBaskerville-Regular.otf);
+}
+
+* {
+  /* background-color: #d3c9bf; */
+  font-family: "Baskerville";
+}
+
+h1 {
+  margin: 0;
+}
+
+.bG {
+  background-image: url(./241342.jpg);
+  width: 100vw;
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.postImages {
+  width: 250px;
+  height: 250px;
+  padding: 2vw;
+}
+
+.postImageLink {
+  background: #d3c9bf;
+}
+
+.profilePhoto {
+  width: 150px;
+  height: 150px;
+}
+
+/* POST PAGE CSS */
+
+.postContainer {
+  display: flex;
+}
+
+.postContainer div {
+  flex-direction: row;
+  width: 30vw;
+  margin: 2vw;
+}
+
+/* Home page  */
+
+.homeContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: row;
+  text-align: center;
+  margin: 2vw;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+
+/* New post styling  */
+
+.newPostContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.newPostContainer div {
+  margin: 1vw;
+  padding: 1vw;
+}
+
+/* Userpage */
+
+.userPage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: row;
+  text-align: center;
+  margin: 2vw;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+
+/* signIn */
+
+.signIn {
+  display: flex;
+  flex-direction: column;
+}
+
+.signIn div {
+  margin: 1vw;
+  padding: 1vw;
+}
+
+/* Profile Page  */
+
+.profilePage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: row;
+  text-align: center;
+  margin: 2vw;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
